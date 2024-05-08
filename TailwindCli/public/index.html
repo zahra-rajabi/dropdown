@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="build/output.css" />
+    <title>Document</title>
+  </head>
+
+  <body class="bg-gray-200 flex justify-center items-center h-screen">
+    <div x-data="{ open: false }" class="relative">
+      <button
+        @click="open = !open"
+        class="z-30 relative px-4 py-2 rounded-lg bg-blue-500 text-white inline-flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-[3px] focus:ring-offset-slate-50"
+      >
+        <span>show more</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
+      <button
+        x-show="open"
+        @click="open = false"
+        class="z-0 fixed inset-0 bg-blue-200 opacity-35"
+      ></button>
+      <div
+        class="z-30 bg-white rounded-lg mt-2 overflow-hidden absolute w-full border-2 border-gray-200"
+        x-show="open"
+      >
+        <a href="#" class="block p-2 text-gray-800 hover:bg-gray-300"
+          >Account</a
+        >
+        <a href="#" class="block p-2 text-gray-800 hover:bg-gray-300"
+          >Setting</a
+        >
+        <a href="#" class="block p-2 text-gray-800 hover:bg-gray-300"
+          >Contact</a
+        >
+      </div>
+    </div>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
